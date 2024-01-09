@@ -12,6 +12,7 @@ body {
     // @include mix.displaySetting(flex, center, column, "", 16px, "");
     @include mix.color("", var.$color-background);
     text-align: center;
+    padding: 0 var.$global-padding;
     header {
         
         h1 {
@@ -24,15 +25,19 @@ body {
             background-color: var.$color-orange;
             border-radius: 4px;
             padding: 16px 0;
+            margin: 16px 0;
 
             #divSearchBar {
+                padding: 1rem 0;
                 #searchString {
                     border-radius: 4px;
                     @include mix.dimensions(30vw, "");
-                    padding: 4px
+                    @include mix.text(1.25rem, 500, left);
+                    padding: 4px;
                 }
                 #sortBy {
                     border-radius: 4px;
+                    @include mix.text(1.25rem, 500, left);
                     padding: 4px
                 }
             }
@@ -66,7 +71,8 @@ body {
                 min-height: 560px;
                 @include mix.dimensions(var.$div-width, "");
                 @include mix.color("", white);
-                border: 1px solid black;
+                border: none;
+                box-shadow: 0 0 16px 0 black;
                 padding: 8px 32px;
 
                 .imgContainer {
@@ -89,7 +95,10 @@ body {
                     padding: 16px 0;
                 }
                 hr {
-
+                    margin: 1px;
+                    border: 1px solid grey;
+                    width: 100%;
+                    background-color: grey;
                 }
                 .divProductFooter {
 
