@@ -9,9 +9,9 @@
 
 body {
 
-    // @include mix.displaySetting(flex, center, column, "", 16px, "");
     @include mix.color("", var.$color-background);
-    text-align: center;
+    max-width: 1920px;
+    margin: 0 auto;
     padding: 0 var.$global-padding;
     header {
         
@@ -29,6 +29,7 @@ body {
 
             #divSearchBar {
                 padding: 1rem 0;
+                text-align: center;
                 #searchString {
                     border-radius: 4px;
                     @include mix.dimensions(30vw, "");

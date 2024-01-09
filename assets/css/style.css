@@ -7,7 +7,8 @@
 body {
   color: "";
   background-color: rgb(245, 245, 245);
-  text-align: center;
+  max-width: 1920px;
+  margin: 0 auto;
   padding: 0 64px;
 }
 body header h1 {
@@ -26,6 +27,7 @@ body header #navBar {
 }
 body header #navBar #divSearchBar {
   padding: 1rem 0;
+  text-align: center;
 }
 body header #navBar #divSearchBar #searchString {
   border-radius: 4px;
