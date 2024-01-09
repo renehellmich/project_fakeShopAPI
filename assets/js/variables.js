@@ -5,7 +5,7 @@ export let variables = {
 
     optChoice: null,
     category: null,
-    productArr: []
+    productArr: [],
 }
 
 export const button = {

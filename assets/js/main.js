@@ -3,78 +3,105 @@ import { functions } from "./functions.js";
 
 //lokale Variablen
 
-// API Verbindung herstellen
-const getAPI = () => {
-    
-    fetch('https://fakestoreapi.com/products?')
-        .then((res) => res.json())
-        .then((data) => {
-            console.log("Data: ", data);
+// API Verbindung herstellen und Daten in Array laden
+async function initialBuild() {
+    const getArr = await getAPI()
 
-            variables.productArr = data
+    console.log("* InitialBuildArr geladen*");
+}
+const getAPI = async () => {
+    let returnArr = []
+    try {
+        
+        await fetch('https://fakestoreapi.com/products?')
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Data: ", data);
 
-            console.log("Initial ProductArr: ", variables.productArr);
-            
-        })
+                
+                variables.productArr = [...data]
+                // buildSection(variables.productArr)
+
+                console.log("Initial ProductArr: ", variables.productArr);
+
+                returnArr = data
+            })
+        return returnArr
+    } catch(error) {
+        console.log(error);
+        throw error
+    }
 }
 
 const getSort = () => {
     variables.optChoice = variables.selectStr.value
+
+    buildSection(variables.productArr)
 }
 
 //internal function
-const buildSection = () => {
+const buildSection = (arr) => {
     let optChoice = variables.optChoice
     let filter = variables.category
     let Arr = []
     functions.deleteProducts()
 
-    console.log(variables.productArr);
+    // getAPI()
+    console.log(" * Arr übergeben: *", arr);
 
     console.log(optChoice);
-            switch (optChoice) {
-                case "sortBy":
-                    variables.productArr.sort((a, b) => a.id - b.id)
-                    break;
-                case "price":
-                    variables.productArr.sort((a, b) => b.price - a.price)
-                    break;
-                case "rating":
-                    variables.productArr.sort((a, b) => b.rating.rate - a.rating.rate)
-            }
+    switch (optChoice) {
+        case "sortBy":
+            arr.sort((a, b) => a.id - b.id)
+            break;
+        case "priceDown":
+            arr.sort((a, b) => b.price - a.price)
+            break;
+        case "priceUp":
+            arr.sort((a, b) => a.price - b.price)
+            break;
+        case "ratingDown":
+            arr.sort((a, b) => b.rating.rate - a.rating.rate)
+            break;
+        case "ratingUp":
+            arr.sort((a, b) => a.rating.rate - b.rating.rate)
+            break;
+    }
+    console.log("Ausgabe Filter: ", filter);
+    switch (filter) {
+        case null:
+            functions.buildDiv(arr)
+            break;
+        case "electronics":
+            Arr = functions.filterElectronics(arr)
+            functions.buildDiv(Arr)
+            break;
+        case "men's clothing":
+            break;
+        case "women's clothing":
+            break;
 
-            switch (filter) {
-                case null:
-                    functions.buildDiv(variables.productArr)
-                    break;
-                case "electronics":
-                    Arr = functions.filterElectronics(variables.productArr)
-                    functions.buildDiv(Arr)
-                    break;
-                case "men's clothing":
-                    break;
-                case "women's clothing":
-                    break;
-
-            }
+    }
 
 }
 
 const getElectronics = () => {
     variables.category = "electronics"
 
-    buildSection()
+    buildSection(variables.productArr)
 }
 
 
-//functions Aufrufe
-getAPI();
+// ==== functions Aufrufe
+console.log("=== Initialisierung === ");
+await initialBuild()
+// getAPI();
 getSort();
-buildSection();
+buildSection(variables.productArr);
 
 // OutputSection
-variables.selectStr.addEventListener("change", () => getSort)
-button.btElectronics.addEventListener("click", () => getElectronics)
-button.btJewelery.addEventListener("click", "")
-button.btMen.addEventListener("click", "")
-button.btWomen.addEventListener("click", "")
+variables.selectStr.addEventListener("change", getSort)
+button.btElectronics.addEventListener("click", getElectronics)
+// button.btJewelery.addEventListener("click", "")
+// button.btMen.addEventListener("click", "")
+// button.btWomen.addEventListener("click", "")
