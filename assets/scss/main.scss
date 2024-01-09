@@ -17,12 +17,14 @@ body {
         
         h1 {
             text-align: center;
-            @include mix.color(var.$color-orange, "")
+            @include mix.color(var.$color-blue, "");
+            @include mix.text(4rem, 600, "");
+            padding: 16px 0
         }
         #navBar {
             border: 1px solid black;
             @include mix.dimensions(100%, "");
-            background-color: var.$color-orange;
+            background-color: var.$color-blue;
             border-radius: 4px;
             padding: 16px 0;
             margin: 16px 0;
@@ -39,20 +41,29 @@ body {
                 #sortBy {
                     border-radius: 4px;
                     @include mix.text(1.25rem, 500, left);
-                    padding: 4px
+                    padding: 4px;
                 }
             }
 
             #divFilterCategories {
                 @include mix.displaySetting(flex, center, row, center, 16px, wrap);
                 @include mix.color(white, "");
+                @include mix.text(1.25rem, 400, "");
                 
                 button {
                     @include mix.dimensions("", min-content);
-                    @include mix.color(white, var.$color-orange);
+                    @include mix.color(white, var.$color-blue);
                     border: 1px solid white;
                     border-radius: 8px;
                     padding: 8px 16px;
+                    @include mix.text(1.25rem, 400, "");
+
+                    &:hover {
+                        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 34%, rgba(0,212,255,1) 100%);
+                        // background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+                        // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,155,51,1) 34%, rgba(255,255,255,1) 100%);
+                        @include mix.text(1.5rem, bold, "");
+                    }
 
                 }
 
@@ -61,11 +72,20 @@ body {
     }
 
     main {
-
+        
         #sectionArticle {
             @include mix.displaySetting(flex, center, row, flex-start, var.$div-gap, wrap);
-
+            
             .divProduct {
+                &:hover {
+                    background: linear-gradient(to right, rgba(28, 168, 194, 0.5) 0%, rgba(232, 15, 0, 0.5) 50%);
+                    .divProductFooter .pFooterPrice {
+                        color: black;
+                    }
+                    .divProductFooter .divProductButton {
+                        
+                    }
+                }
 
                 @include mix.displaySetting(flex, space-between, column, center, "", "");
                 min-width: 360px;
@@ -110,13 +130,19 @@ body {
                         @include mix.text(2rem, bold, "")
                     }
                     .divProductButton {
-                        @include mix.color(white, var.$color-orange);
+                        @include mix.color(white, var.$color-blue);
                         @include mix.text(1.25rem, 500, center);
                         border: none;
                         padding: 8px 16px;
                         border-radius: 4px;
+
+                        &:hover {
+                            font-size: 150%;
+                            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 34%, rgba(0,212,255,1) 100%);
+                        }
                     }
                 }
+
             }
         }
     }

@@ -13,14 +13,18 @@ body {
 }
 body header h1 {
   text-align: center;
-  color: rgb(238, 121, 99);
+  color: rgb(9, 9, 121);
   background-color: "";
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: "";
+  padding: 16px 0;
 }
 body header #navBar {
   border: 1px solid black;
   width: 100%;
   height: "";
-  background-color: rgb(238, 121, 99);
+  background-color: rgb(9, 9, 121);
   border-radius: 4px;
   padding: 16px 0;
   margin: 16px 0;
@@ -54,15 +58,27 @@ body header #navBar #divFilterCategories {
   flex-wrap: wrap;
   color: white;
   background-color: "";
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: "";
 }
 body header #navBar #divFilterCategories button {
   width: "";
   height: min-content;
   color: white;
-  background-color: rgb(238, 121, 99);
+  background-color: rgb(9, 9, 121);
   border: 1px solid white;
   border-radius: 8px;
   padding: 8px 16px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: "";
+}
+body header #navBar #divFilterCategories button:hover {
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 34%, rgb(0, 212, 255) 100%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: "";
 }
 body main #sectionArticle {
   display: flex;
@@ -88,6 +104,12 @@ body main #sectionArticle .divProduct {
   border: none;
   box-shadow: 0 0 16px 0 black;
   padding: 8px 32px;
+}
+body main #sectionArticle .divProduct:hover {
+  background: linear-gradient(to right, rgba(28, 168, 194, 0.5) 0%, rgba(232, 15, 0, 0.5) 50%);
+}
+body main #sectionArticle .divProduct:hover .divProductFooter .pFooterPrice {
+  color: black;
 }
 body main #sectionArticle .divProduct .imgContainer {
   width: "";
@@ -133,13 +155,17 @@ body main #sectionArticle .divProduct .divProductFooter .pFooterPrice {
 }
 body main #sectionArticle .divProduct .divProductFooter .divProductButton {
   color: white;
-  background-color: rgb(238, 121, 99);
+  background-color: rgb(9, 9, 121);
   font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
+}
+body main #sectionArticle .divProduct .divProductFooter .divProductButton:hover {
+  font-size: 150%;
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(9, 9, 121) 34%, rgb(0, 212, 255) 100%);
 }
 
 /*# sourceMappingURL=style.css.map */
