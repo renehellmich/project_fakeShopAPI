@@ -124,9 +124,16 @@ const resetAll = () => {
 
     variables.selectStr.children[0].selected = true
     console.log(variables.selectStr.children[0].selected);
+
+    variables.inputStr.value = null;
     
 
     buildSection(variables.productArr)
+}
+
+const sortByKey = () => {
+    const arr = functions.filterByKey(variables.productArr, variables.inputStr.value)
+    buildSection(arr)
 }
 
 
@@ -138,7 +145,7 @@ getSort();
 buildSection(variables.productArr);
 
 // OutputSection
-// variables.inputStr.addEventListener("keydown", )
+variables.inputStr.addEventListener("keydown", sortByKey)
 variables.selectStr.addEventListener("change", getSort)
 button.btElectronics.addEventListener("click", getElectronics)
 button.btJewelery.addEventListener("click", getJewelery)

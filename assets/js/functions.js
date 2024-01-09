@@ -40,6 +40,11 @@ export const functions = {
         const filterArr = data.filter(el => el.category == "women's clothing")
 
         return filterArr
+    },
+    filterByKey: (data, searchString) => {
+        const filterArr = data.filter(el => el.title.includes(searchString))
+
+        return filterArr
     }
     
 }
