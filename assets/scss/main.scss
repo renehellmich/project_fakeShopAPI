@@ -110,8 +110,10 @@ body {
                     }
                     .divProductButton {
                         @include mix.color(white, var.$color-orange);
+                        @include mix.text(1.25rem, 500, center);
                         border: none;
-                        padding: 4px
+                        padding: 8px 16px;
+                        border-radius: 4px;
                     }
                 }
             }

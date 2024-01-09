@@ -132,8 +132,12 @@ body main #sectionArticle .divProduct .divProductFooter .pFooterPrice {
 body main #sectionArticle .divProduct .divProductFooter .divProductButton {
   color: white;
   background-color: rgb(238, 121, 99);
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
   border: none;
-  padding: 4px;
+  padding: 8px 16px;
+  border-radius: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */
