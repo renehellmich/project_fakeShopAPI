@@ -16,12 +16,6 @@ const getAPI = async () => {
             .then((data) => {
                 console.log("Data: ", data);
 
-                /*
-                // variables.productArr = [...data]
-                // buildSection(variables.productArr)
-
-                // console.log("Initial ProductArr: ", variables.productArr);
-                */
                 returnArr = data
             })
 
@@ -140,7 +134,6 @@ const sortByKey = () => {
 // ==== functions Aufrufe
 console.log("=== Initialisierung === ");
 await initialBuild()
-// getAPI();
 getSort();
 buildSection(variables.productArr);
 

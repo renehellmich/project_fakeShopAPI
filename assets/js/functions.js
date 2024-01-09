@@ -14,7 +14,7 @@ export const functions = {
                 <p class='pProductDescription'>${el.title}</p>
                 <hr>
                 <div class='divProductFooter'>
-                    <p class='pFooterPrice'>${el.price}$</p>
+                    <p class='pFooterPrice'>$ ${el.price}</p>
                     <button type='button' class='divProductButton'>Add to Chart</button>
                 </div>
             </div>
