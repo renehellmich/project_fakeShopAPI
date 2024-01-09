@@ -132,6 +132,13 @@ Sortier,- und Filtermöglichkeiten sind parallel, also zusammen nutzbar.
 
 
 
+## Optimizations
+
+Als nächste Schritte kann angedacht werden:
+
+    1. Suche nach bestimmten Keywörtern IN KOMBINATION mit Filtern und Sortierungen
+    2. Option zum Wählen einer Preispanne
+    3. MediaQueries
 
 
 
