@@ -80,7 +80,9 @@ body {
                 &:hover {
                     background: linear-gradient(to right, rgba(28, 168, 194, 0.5) 0%, rgba(232, 15, 0, 0.5) 50%);
                     .divProductFooter .pFooterPrice {
-                        color: black;
+                        color: var.$color-gold;
+                        @include mix.text(2.5rem, bold, "")
+                        
                     }
                     .divProductFooter .divProductButton {
                         
