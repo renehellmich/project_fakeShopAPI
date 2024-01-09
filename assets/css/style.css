@@ -1,0 +1,25 @@
+body main #sectionArticle {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+body main #sectionArticle .divProduct {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: "";
+  width: calc((100% - 128px) / 3);
+  height: "";
+  border: 1px solid black;
+}
+body main #sectionArticle .divProduct .divImg {
+  width: 100%;
+  height: "";
+}
+
+/*# sourceMappingURL=style.css.map */

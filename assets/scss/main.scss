@@ -1,0 +1,28 @@
+@use 'variables' as var;
+@use 'mixin' as mix;
+
+body {
+
+    header {
+
+
+    }
+    main {
+
+        #sectionArticle {
+            @include mix.displaySetting(flex, center, row, flex-start, var.$div-gap, wrap);
+
+            .divProduct {
+
+                @include mix.displaySetting(flex, center, column, center, var.$div-gap, "");
+                @include mix.dimensions(var.$div-width, "");
+                border: 1px solid black;
+
+                .divImg {
+
+                    @include mix.dimensions(100%, "")
+                }
+            }
+        }
+    }
+}

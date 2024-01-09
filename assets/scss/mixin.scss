@@ -1,0 +1,13 @@
+@mixin displaySetting($display, $justify, $direction, $align, $gap, $wrap) {
+    display: $display;
+    justify-content: $justify;
+    flex-direction: $direction;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}

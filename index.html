@@ -8,24 +8,41 @@
 </head>
 <body>
     <header>
-        <div id="divSearchBar">
-            <input type="text" name="searchString" id="searchString">
-            <select name="sortBy" id="sortBy"></select>
-        </div>
-        <div id="divFilterCategories">
-            <p>Filter by Categories</p>
-            <button type="button">electronics</button>
-            <button type="button">jewelery</button>
-            <button type="button">men's clothing</button>
-            <button type="button">women's clothing</button>
-        </div>
+        <h1>SuperFakeStore</h1>
+        <nav id="navBar">
+            <div id="divSearchBar">
+                <input type="text" name="searchString" id="searchString">
+                <select name="sortBy" id="sortBy">
+                    <option value="sortBy">Sort By</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+            <div id="divFilterCategories">
+                <p>Filter by Categories</p>
+                <button type="button" id="buttonElectronics">electronics</button>
+                <button type="button" id="buttonJewelery">jewelery</button>
+                <button type="button" id="buttonMen">men's clothing</button>
+                <button type="button" id="buttonWomen">women's clothing</button>
+            </div>
+        </nav>
     </header>
     <main>
-
+        <section id="sectionArticle">
+            <!-- <div class="divProduct">
+                <img src="" alt="" class="divImg">
+                <p class="pProductDescription"></p>
+                <hr>
+                <div class="divProductFooter">
+                    <p class="pFooter"></p>
+                    <button type="button" class="divProductButton"></button>
+                </div>
+            </div> -->
+        </section>
     </main>
     <footer>
 
     </footer>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
 </body>
 </html>
