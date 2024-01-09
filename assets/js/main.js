@@ -8,6 +8,10 @@ async function initialBuild() {
     variables.productArr = await getAPI()
     console.log("* InitialBuildArr geladen*");
 }
+
+/*
+Mittels der async function wird sichergestellt, dass die Variable erst befüllt wird, wenn alle Befehle in getAPI() ausgeführt und abgeschlossen sind. Hier führt sorgt der Zusatz await innerhalb getAPI() for fetch(). Würde async - await nicht benutzt werden, würde die Variable variables.productArr nicht befüllt werden.
+*/
 const getAPI = async () => {
     let returnArr = []
     try {
@@ -28,13 +32,20 @@ const getAPI = async () => {
     }
 }
 
+// Hier wird der Sortierungswert abgerufen und in der dazugehörigen Variablen abgespeichert.
 const getSort = () => {
     variables.optChoice = variables.selectStr.value
 
     buildSection(variables.productArr)
 }
 
-//internal function
+// === internal functions
+/*
+Hier erfolgt eine Zusammenführung der Variablen und Aufbau der Section in zwei switch - case Anweisungen.
+1. switch(sort)
+2. switch(filter)
+in der switch(filter) Anweisung erfolgt auch die Generierung der identischen Div-Container mit den Werten aus dem sortierten und gefilterten Array.
+*/
 const buildSection = (arr) => {
     let optChoice = variables.optChoice
     let filter = variables.category
@@ -88,6 +99,8 @@ const buildSection = (arr) => {
 
 }
 
+// Minifunktionen zum befüllen der Kategorievariablen
+
 const getElectronics = () => {
     variables.category = "electronics"
 
@@ -112,6 +125,8 @@ const getWomens = () => {
     buildSection(variables.productArr)
 }
 
+// Filter und Kategorieauswahl werden auf den Initialzustand gesetzt.
+
 const resetAll = () => {
     variables.category = null
     variables.optChoice = variables.selectStr.children[0].value
@@ -124,6 +139,8 @@ const resetAll = () => {
 
     buildSection(variables.productArr)
 }
+
+// Die Funktion wird bei jedem Tastenanschlag im Eingabefeld aufgerufen und filtert das Array nach der entsprechenden Eingabe.
 
 const sortByKey = () => {
     const arr = functions.filterByKey(variables.productArr, variables.inputStr.value)

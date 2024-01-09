@@ -15,7 +15,7 @@ export const functions = {
                 <hr>
                 <div class='divProductFooter'>
                     <p class='pFooterPrice'>$ ${el.price}</p>
-                    <button type='button' class='divProductButton'>Add to Chart</button>
+                    <button type='button' class='divProductButton'>Add to cart</button>
                 </div>
             </div>
             `
