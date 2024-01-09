@@ -35,7 +35,7 @@ export const functions = {
         return filterArr
     },
     filterWomens: (data) => {
-        const filterArr = data.filter(el => el.category == "women's clothing")
+        const filterArr = data.filter(el => el.category == "")
 
         return filterArr
     }

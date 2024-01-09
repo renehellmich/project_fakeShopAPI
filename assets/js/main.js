@@ -11,20 +11,22 @@ async function initialBuild() {
 const getAPI = async () => {
     let returnArr = []
     try {
-        
         await fetch('https://fakestoreapi.com/products?')
             .then((res) => res.json())
             .then((data) => {
                 console.log("Data: ", data);
 
-                
+                /*
                 // variables.productArr = [...data]
                 // buildSection(variables.productArr)
 
                 // console.log("Initial ProductArr: ", variables.productArr);
-
+                */
                 returnArr = data
             })
+
+        // ? Kommentar: wie kann ich den return Befehl besser gestalten, so dass ich direkt sagen kann return data ohne den Umweg über die Variable returnArr? Danke!
+
         return returnArr
     } catch(error) {
         console.log(error);
@@ -116,6 +118,17 @@ const getWomens = () => {
     buildSection(variables.productArr)
 }
 
+const resetAll = () => {
+    variables.category = null
+    variables.optChoice = variables.selectStr.children[0].value
+
+    variables.selectStr.children[0].selected = true
+    console.log(variables.selectStr.children[0].selected);
+    
+
+    buildSection(variables.productArr)
+}
+
 
 // ==== functions Aufrufe
 console.log("=== Initialisierung === ");
@@ -125,8 +138,10 @@ getSort();
 buildSection(variables.productArr);
 
 // OutputSection
+// variables.inputStr.addEventListener("keydown", )
 variables.selectStr.addEventListener("change", getSort)
 button.btElectronics.addEventListener("click", getElectronics)
 button.btJewelery.addEventListener("click", getJewelery)
 button.btMen.addEventListener("click", getMens)
 button.btWomen.addEventListener("click", getWomens)
+button.betReset.addEventListener("click", resetAll)

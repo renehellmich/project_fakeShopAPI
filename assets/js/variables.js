@@ -12,5 +12,6 @@ export const button = {
     btElectronics: document.querySelector("#buttonElectronics"),
     btJewelery: document.querySelector("#buttonJewelery"),
     btMen: document.querySelector("#buttonMen"),
-    btWomen: document.querySelector("#buttonWomen")
+    btWomen: document.querySelector("#buttonWomen"),
+    betReset: document.querySelector("#buttonReset"),
 }
