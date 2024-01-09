@@ -1,6 +1,12 @@
 @use 'variables' as var;
 @use 'mixin' as mix;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
 
     // @include mix.displaySetting(flex, center, column, "", 16px, "");
@@ -55,23 +61,32 @@ body {
 
             .divProduct {
 
-                @include mix.displaySetting(flex, center, column, center, var.$div-gap, "");
-                min-width: 480px;
+                @include mix.displaySetting(flex, space-between, column, center, "", "");
+                min-width: 360px;
+                min-height: 560px;
                 @include mix.dimensions(var.$div-width, "");
                 @include mix.color("", white);
                 border: 1px solid black;
+                padding: 8px 32px;
 
                 .imgContainer {
 
-                    @include mix.dimensions("", 20vh);
+                    @include mix.dimensions("", 80%);
                     text-align: center;
                     .divImg {
 
-                        @include mix.dimensions(100%, "");
+                        @include mix.dimensions("", 250px);
+                        max-width: 100%;
+                        // margin-bottom: 8px;
+                        // overflow-clip-margin: content-box;
+                        // overflow: clip;
                     }
                 }
                 .pProductDescription {
-
+                    @include mix.text(1.5rem, bold, left);
+                    min-height: 88px;
+                    @include mix.dimensions("", auto);
+                    padding: 16px 0;
                 }
                 hr {
 
@@ -79,9 +94,10 @@ body {
                 .divProductFooter {
 
                     @include mix.displaySetting(flex, space-between, row, center, "", wrap);
-                    @include mix.dimensions("", 100%);
+                    @include mix.dimensions(100%, "");
                     .pFooterPrice {
                         @include mix.color(var.$color-green, "");
+                        @include mix.text(2rem, bold, "")
                     }
                     .divProductButton {
                         @include mix.color(white, var.$color-orange);

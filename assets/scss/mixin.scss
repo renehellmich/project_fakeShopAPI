@@ -16,3 +16,9 @@
     color: $color;
     background-color: $background;
 }
+
+@mixin text($size, $weigth, $align) {
+    font-size: $size;
+    font-weight: $weigth;
+    text-align: $align;
+}
