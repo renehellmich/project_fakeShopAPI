@@ -8,7 +8,9 @@ export const functions = {
         data.forEach(el => {
             variables.outputSection.innerHTML += `
                 <div class='divProduct'>
-                <img src='${el.image}' alt='' class='divImg'>
+                <figure class='imgContainer'>
+                    <img src='${el.image}' alt='' class='divImg'>
+                </figure>
                 <p class='pProductDescription'>${el.title}</p>
                 <hr>
                 <div class='divProductFooter'>
@@ -35,7 +37,7 @@ export const functions = {
         return filterArr
     },
     filterWomens: (data) => {
-        const filterArr = data.filter(el => el.category == "")
+        const filterArr = data.filter(el => el.category == "women's clothing")
 
         return filterArr
     }

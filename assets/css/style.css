@@ -1,3 +1,50 @@
+body {
+  color: "";
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+}
+body header h1 {
+  text-align: center;
+  color: rgb(238, 121, 99);
+  background-color: "";
+}
+body header #navBar {
+  border: 1px solid black;
+  width: 100%;
+  height: "";
+  background-color: rgb(238, 121, 99);
+  border-radius: 4px;
+  padding: 16px 0;
+}
+body header #navBar #divSearchBar #searchString {
+  border-radius: 4px;
+  width: 30vw;
+  height: "";
+  padding: 4px;
+}
+body header #navBar #divSearchBar #sortBy {
+  border-radius: 4px;
+  padding: 4px;
+}
+body header #navBar #divFilterCategories {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: "";
+  color: white;
+  background-color: "";
+}
+body header #navBar #divFilterCategories button {
+  width: "";
+  height: min-content;
+  color: white;
+  background-color: rgb(238, 121, 99);
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
 body main #sectionArticle {
   display: flex;
   justify-content: center;
@@ -15,9 +62,16 @@ body main #sectionArticle .divProduct {
   flex-wrap: "";
   width: calc((100% - 128px) / 3);
   height: "";
+  color: "";
+  background-color: white;
   border: 1px solid black;
 }
-body main #sectionArticle .divProduct .divImg {
+body main #sectionArticle .divProduct .imgContainer {
+  width: "";
+  height: 20vh;
+  text-align: center;
+}
+body main #sectionArticle .divProduct .imgContainer .divImg {
   width: 100%;
   height: "";
 }

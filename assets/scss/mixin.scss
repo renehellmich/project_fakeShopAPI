@@ -11,3 +11,8 @@
     width: $width;
     height: $height;
 }
+
+@mixin color($color, $background) {
+    color: $color;
+    background-color: $background;
+}
