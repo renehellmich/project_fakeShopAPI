@@ -5,8 +5,7 @@ import { functions } from "./functions.js";
 
 // API Verbindung herstellen und Daten in Array laden
 async function initialBuild() {
-    const getArr = await getAPI()
-
+    variables.productArr = await getAPI()
     console.log("* InitialBuildArr geladen*");
 }
 const getAPI = async () => {
@@ -19,10 +18,10 @@ const getAPI = async () => {
                 console.log("Data: ", data);
 
                 
-                variables.productArr = [...data]
+                // variables.productArr = [...data]
                 // buildSection(variables.productArr)
 
-                console.log("Initial ProductArr: ", variables.productArr);
+                // console.log("Initial ProductArr: ", variables.productArr);
 
                 returnArr = data
             })
@@ -76,9 +75,17 @@ const buildSection = (arr) => {
             Arr = functions.filterElectronics(arr)
             functions.buildDiv(Arr)
             break;
+        case "jewelery":
+            Arr = functions.filterJewelery(arr)
+            functions.buildDiv(Arr)
+            break;
         case "men's clothing":
+            Arr = functions.filterMens(arr)
+            functions.buildDiv(Arr)
             break;
         case "women's clothing":
+            Arr = functions.filterWomens(arr)
+            functions.buildDiv(Arr)
             break;
 
     }
@@ -87,6 +94,24 @@ const buildSection = (arr) => {
 
 const getElectronics = () => {
     variables.category = "electronics"
+
+    buildSection(variables.productArr)
+}
+
+const getJewelery = () => {
+    variables.category = "jewelery"
+
+    buildSection(variables.productArr)
+}
+
+const getMens = () => {
+    variables.category = "men's clothing"
+
+    buildSection(variables.productArr)
+}
+
+const getWomens = () => {
+    variables.category = "women's clothing"
 
     buildSection(variables.productArr)
 }
@@ -102,6 +127,6 @@ buildSection(variables.productArr);
 // OutputSection
 variables.selectStr.addEventListener("change", getSort)
 button.btElectronics.addEventListener("click", getElectronics)
-// button.btJewelery.addEventListener("click", "")
-// button.btMen.addEventListener("click", "")
-// button.btWomen.addEventListener("click", "")
+button.btJewelery.addEventListener("click", getJewelery)
+button.btMen.addEventListener("click", getMens)
+button.btWomen.addEventListener("click", getWomens)

@@ -26,12 +26,18 @@ export const functions = {
     },
     filterJewelery: (data) => {
         const filterArr = data.filter(el => el.category == "jewelery")
+
+        return filterArr
     },
     filterMens: (data) => {
-        const filterArr = data.filter(el => el.category == "men's clothes")
+        const filterArr = data.filter(el => el.category == "men's clothing")
+
+        return filterArr
     },
     filterWomens: (data) => {
-        const filterArr = data.filter(el => el.category == "women's clothes")
+        const filterArr = data.filter(el => el.category == "women's clothing")
+
+        return filterArr
     }
     
 }
