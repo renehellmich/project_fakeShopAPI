@@ -32,7 +32,7 @@ body header #navBar #divFilterCategories {
   flex-direction: row;
   align-items: center;
   gap: 16px;
-  flex-wrap: "";
+  flex-wrap: wrap;
   color: white;
   background-color: "";
 }
@@ -60,6 +60,7 @@ body main #sectionArticle .divProduct {
   align-items: center;
   gap: 16px;
   flex-wrap: "";
+  min-width: 480px;
   width: calc((100% - 128px) / 3);
   height: "";
   color: "";
@@ -74,6 +75,26 @@ body main #sectionArticle .divProduct .imgContainer {
 body main #sectionArticle .divProduct .imgContainer .divImg {
   width: 100%;
   height: "";
+}
+body main #sectionArticle .divProduct .divProductFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: "";
+  flex-wrap: wrap;
+  width: "";
+  height: 100%;
+}
+body main #sectionArticle .divProduct .divProductFooter .pFooterPrice {
+  color: rgb(107, 197, 108);
+  background-color: "";
+}
+body main #sectionArticle .divProduct .divProductFooter .divProductButton {
+  color: white;
+  background-color: rgb(238, 121, 99);
+  border: none;
+  padding: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -32,7 +32,7 @@ body {
             }
 
             #divFilterCategories {
-                @include mix.displaySetting(flex, center, row, center, 16px, "");
+                @include mix.displaySetting(flex, center, row, center, 16px, wrap);
                 @include mix.color(white, "");
                 
                 button {
@@ -56,6 +56,7 @@ body {
             .divProduct {
 
                 @include mix.displaySetting(flex, center, column, center, var.$div-gap, "");
+                min-width: 480px;
                 @include mix.dimensions(var.$div-width, "");
                 @include mix.color("", white);
                 border: 1px solid black;
@@ -67,6 +68,25 @@ body {
                     .divImg {
 
                         @include mix.dimensions(100%, "");
+                    }
+                }
+                .pProductDescription {
+
+                }
+                hr {
+
+                }
+                .divProductFooter {
+
+                    @include mix.displaySetting(flex, space-between, row, center, "", wrap);
+                    @include mix.dimensions("", 100%);
+                    .pFooterPrice {
+                        @include mix.color(var.$color-green, "");
+                    }
+                    .divProductButton {
+                        @include mix.color(white, var.$color-orange);
+                        border: none;
+                        padding: 4px
                     }
                 }
             }
